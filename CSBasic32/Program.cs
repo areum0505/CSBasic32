@@ -33,7 +33,6 @@ namespace CSBasic32
              * comment
              */
 
-
             // 출력
             Console.Write("이건 안개행");
             Console.Write("입니다.");
@@ -42,6 +41,7 @@ namespace CSBasic32
             Console.WriteLine("입니다.");
 
             Console.WriteLine();
+
 
             // 자료형 (Data Type)
             // Integer
@@ -75,6 +75,49 @@ namespace CSBasic32
             Console.WriteLine("미림여자정보\t과학고");
             Console.WriteLine("미림여자정보과\t학고");
             Console.WriteLine("미림여자정보과학\t고");
+
+            Console.WriteLine();
+
+            // 문자열 연결 연산자
+            // concat concateate operator
+            // concatenation operator
+            Console.WriteLine("ABC" + "EFG");
+            Console.WriteLine('A' + 'E');
+            Console.WriteLine("ABC" + 'E');
+
+            Console.WriteLine("ABC"[2]);
+            //Console.WriteLine("ABC"[3]);    //IndexOutOfRangeException
+
+            Console.WriteLine();
+
+            bool isPlay = true;
+            bool isDeath = false;
+
+            // comparison operator
+            Console.WriteLine(52 == 163);
+            Console.WriteLine(52 != 163);
+            Console.WriteLine(52 > 163);    // gt
+            Console.WriteLine(52 < 163);    // lt
+            Console.WriteLine(52 >= 163);
+            Console.WriteLine(52 <= 163);
+
+            // Logic operator
+            Console.WriteLine(!true);
+            Console.WriteLine(true || false);
+            Console.WriteLine(true && false);
+
+            // 단항연산자 - unary operator
+            Console.WriteLine(!true);
+            int i = 0;
+            i++;
+            // 이항연산자 - binary operator
+            i = 1 + 2;
+            // 삼항연산자 - ternary operator
+            int j;
+            j = (i > 3) ? 0 : 1;
+            //Console.WriteLine(3 < i < 8);
+            Console.WriteLine(3 < i && i < 8);
+            Console.WriteLine(i < 3 || 8 < i);
         }
     }
 }
