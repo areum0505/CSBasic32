@@ -157,6 +157,22 @@ namespace CSBasic32
             Console.WriteLine(++num);
             Console.WriteLine(num--);
             Console.WriteLine(--num);
+
+            Console.WriteLine();
+
+            // 복합대입연산자
+            int output = 0;
+            output += 52;
+            output = output + 52;
+            output *= 10;
+            output = output * 10;
+            Console.WriteLine(output);
+
+            // 문자열 연결 연산자를 사용한 복합연산자
+            string output3 = "Hello";
+            output3 += " World";
+            output3 += "?!";
+            Console.WriteLine(output3);
         }
     }
 }
