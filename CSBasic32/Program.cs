@@ -8,7 +8,10 @@ namespace CSBasic32
 {
     class Program
     {
+        // var 키워드는 지역변수로만 사용 가능
         // var name = "김아름";
+        // var somethig = "blah";
+
         static void Main(string[] args)
         {
             // keyword
@@ -189,6 +192,16 @@ namespace CSBasic32
             Console.WriteLine(_double.GetType());
             Console.WriteLine(_char.GetType());
             Console.WriteLine(_string.GetType());
+
+            Console.WriteLine();
+
+            // var 키워드
+            var somea = "문자열";
+            var someb = 42;
+            var somec = 3.141592;
+            Console.WriteLine(somea.GetType());
+            Console.WriteLine(someb.GetType());
+            Console.WriteLine(somec.GetType());
         }
     }
 }
