@@ -202,6 +202,20 @@ namespace CSBasic32
             Console.WriteLine(somea.GetType());
             Console.WriteLine(someb.GetType());
             Console.WriteLine(somec.GetType());
+
+            Console.WriteLine();
+
+            // 입력 - 에코 프로그램
+            string input;
+            while (true)
+            {
+                Console.Write("입력 : ");
+                input = Console.ReadLine();
+                if (input.Equals("q"))
+                    break;
+                else
+                    Console.WriteLine(input);
+            }
         }
     }
 }
