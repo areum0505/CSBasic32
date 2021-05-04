@@ -64,6 +64,8 @@ namespace CSBasic322
             {
                 Console.WriteLine("시대를 앞서가는 혁명의 씨앗");
             }
+
+            Console.WriteLine();
         }
     }
 }
