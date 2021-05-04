@@ -97,6 +97,14 @@ namespace CSBasic322
                     Console.WriteLine("대체 어느 행성에 살고 계신가요?");
                     break;
             }
+
+            Console.WriteLine();
+
+            // 삼항 연산자
+            Console.Write("숫자 입력 : ");
+            string input2 = Console.ReadLine();
+            int number = int.Parse(input2);
+            Console.WriteLine((number > 0) ? "자연수" : "자연수 아님");
         }
     }
 }
