@@ -124,6 +124,37 @@ namespace CSBasic322
             {
                 Console.WriteLine("심심해~");
             }
+
+            ConsoleKeyInfo info;
+            bool isLoop = true;
+
+            while(isLoop)
+            {
+                Console.Write("키 입력 : ");
+                info = Console.ReadKey();
+                switch (info.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        Console.Write("↑");
+                        break;
+                    case ConsoleKey.DownArrow:
+                        Console.Write("↓");
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        Console.Write("←");
+                        break;
+                    case ConsoleKey.RightArrow:
+                        Console.Write("→");
+                        break;
+                    case ConsoleKey.Escape:
+                        Console.WriteLine("esc");
+                        isLoop = false;
+                        break;
+                    default:
+                        Console.WriteLine("다른 키");
+                        break;
+                }
+            }
         }
     }
 }
