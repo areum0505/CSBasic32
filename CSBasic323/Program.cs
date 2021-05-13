@@ -35,20 +35,53 @@ namespace CSBasic323
             Console.WriteLine();
 
             // for / 역 for
-            for(int j = '가'; j <= '힣'; j++)
+            for (int j = '가'; j <= '힣'; j++)
             {
                 Console.Write((char)j);
             }
             Console.WriteLine();
 
             int[] intArray3 = { 1, 2, 3, 4, 5, 6 };
-            for(int k = intArray3.Length - 1; k >= 0; k--)
+            for (int k = intArray3.Length - 1; k >= 0; k--)
             {
                 Console.WriteLine(intArray3[k]);
             }
             for (int k = intArray3.Length; k > 0; k--)
             {
                 Console.WriteLine(intArray3[k - 1]);
+            }
+
+            Console.WriteLine();
+
+            // foreach
+            string[] fruits = { "사과", "배", "딸기", "포도", "바나나", "오렌지" };
+            foreach(var fruit in fruits)
+            {
+                Console.WriteLine(fruit);
+            }
+
+            Console.WriteLine();
+
+            // 중첩 for
+            for (i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < i + 1; j++)
+                {
+                    Console.Write('*');
+                }
+                Console.WriteLine();
+            }
+            for (i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10 - i - 1; j++)
+                {
+                    Console.Write(' ');
+                }
+                for (int j = 0; j < i + 1; j++)
+                {
+                    Console.Write('*');
+                }
+                Console.WriteLine();
             }
         }
     }
