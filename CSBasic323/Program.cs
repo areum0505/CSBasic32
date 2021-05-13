@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace CSBasic323
 {
@@ -55,7 +56,7 @@ namespace CSBasic323
 
             // foreach
             string[] fruits = { "사과", "배", "딸기", "포도", "바나나", "오렌지" };
-            foreach(var fruit in fruits)
+            foreach (var fruit in fruits)
             {
                 Console.WriteLine(fruit);
             }
@@ -82,6 +83,81 @@ namespace CSBasic323
                     Console.Write('*');
                 }
                 Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+            // 반복문 응용
+            // 대소문자 변환
+            string input3 = "Potato Tomato";
+            Console.WriteLine(input3.ToUpper());
+            Console.WriteLine(input3.ToLower());
+            input3.ToLower();
+            Console.WriteLine(input3);  // 기존 그대로 출력
+
+            // split
+            string foods = "감자 고구마 토마토";
+            string[] foodArray = foods.Split(new char[] { ' ' });
+            foreach (var item in foodArray)
+            {
+                Console.WriteLine(item);
+            }
+            // 환경변수의 path 텍스트 값을 가져와서 \를 \\로 치환해서 넣어준다.
+            string path = "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server\\bin;%SystemRoot%\\system32;%SystemRoot%;%SystemRoot%\\System32\\Wbem;%SYSTEMROOT%\\System32\\WindowsPowerShell\\v1.0\\;%SYSTEMROOT%\\System32\\OpenSSH\\;C:\\ProgramData\\Naraesoft\\Magic Recovery\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\dotnet\\";
+            string[] paths = path.Split(new char[] { ';' });
+            foreach (var item in paths)
+            {
+                Console.WriteLine(item);
+            }
+
+            // trim
+            string dirtyInput = "   text     um    \n\t";
+            Console.WriteLine("{" + dirtyInput + "}");
+            Console.WriteLine("{" + dirtyInput.Trim() + "}");
+
+            // join
+            string[] foodsArray = { "감자", "고구마", " 토마토", "가지" };
+            Console.WriteLine(string.Join(" ", foodsArray));    // space
+            Console.WriteLine(string.Join(",", foodsArray));
+            Console.WriteLine(string.Join(";", foodsArray));
+            Console.WriteLine(string.Join(" ", foodsArray));    // tab
+
+            //
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine("[     ]");
+            Thread.Sleep(1000);
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine("[#    ]");
+            Thread.Sleep(1000);
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine("[##   ]");
+            Thread.Sleep(1000);
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine("[###  ]");
+            Thread.Sleep(1000);
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine("[#### ]");
+            Thread.Sleep(1000);
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine("[#####]");
+            Thread.Sleep(1000);
+
+            //
+            int x = 1;
+            while(x < 50)
+            {
+                Console.Clear();
+                Console.SetCursorPosition(x, 5);
+
+                if (x % 3 == 0)
+                    Console.WriteLine("__@");
+                else if (x % 3 == 1)
+                    Console.WriteLine("_^@");
+                else
+                    Console.WriteLine("^_@");
+
+                Thread.Sleep(100);
+                x++;
             }
         }
     }
