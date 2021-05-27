@@ -19,6 +19,17 @@ class Car
 }
 // class Math { }  -  x
 
+class MyMath
+{
+    int sumenumber = 42;
+    public static double PI = 3.141592;
+    public static void Greeting()
+    {
+        // Console.WriteLine(somenumber); - 클래스 메서드에서 인스턴스 변수 접근 안됨 ( 반대는 가능)
+        Console.WriteLine("Greeting!");
+    }
+}
+
 namespace CSBasic324
 {
     class FirstClass
@@ -73,7 +84,22 @@ namespace CSBasic324
             Console.WriteLine(Math.Round(52.563));
             Console.WriteLine(Math.Max(52, 273));       // 큰 값
             Console.WriteLine(Math.Min(52, 273));       // 작은 값
-            
+
+            Console.WriteLine();
+
+            // 클래스
+            Product product = new Product();
+            product.name = "감자";
+            product.price = 2000;
+            Console.WriteLine(product.name + " : " + product.price + "원");
+
+            Product productA = new Product() { name = "짜장면", price = 5500 };
+            Product productB = new Product() { name = "짬뽕", price = 8000 };
+            Product productC = new Product() { name = "탕수육" };
+            Product productD = new Product() { price = 999999 };
+            Product productE = new Product() { price = 30000, name = "양장피" };
+
+
         }
     }
 }
