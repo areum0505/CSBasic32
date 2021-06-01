@@ -99,6 +99,42 @@ namespace CSBasic324
             Product productD = new Product() { price = 999999 };
             Product productE = new Product() { price = 30000, name = "양장피" };
 
+            Console.WriteLine();
+
+            // 추상화
+            List<Student> students = new List<Student>()
+            {
+                new Student() { name = "윤인성", grade = 1 },
+                new Student() { name = "연하진", grade = 2 },
+                new Student() { name = "윤아린", grade = 3 },
+                new Student() { name = "윤명월", grade = 4 },
+                new Student() { name = "구지연", grade = 1 },
+                new Student() { name = "김연화", grade = 2 }
+            };
+
+            //foreach (var item in students)
+            for(int i = 0; i < students.Count; i++)
+            {
+                if (students[i].grade > 1)
+                {
+                    //students.Remove(students[i]);
+                    students.RemoveAt(i);
+                    //i = 0;
+                    //i--;
+
+                }
+            }
+            /*for(int i = students.Count; i >= 0; i--)
+            {
+                if(students[i].grade > 1)
+                {
+                    students.RemoveAt(i);
+                }
+            } */
+            foreach (var item in students)
+            {
+                Console.WriteLine(item.name + " : " + item.grade);
+            }
 
         }
     }
