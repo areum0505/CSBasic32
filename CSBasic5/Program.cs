@@ -9,7 +9,7 @@ namespace CSBasic5
     class Product
     {
         public static int counter = 0;
-        public int id;
+        public readonly int id;
         public string name;
         public int price;
 
@@ -19,6 +19,12 @@ namespace CSBasic5
             this.id = counter;
             this.name = name;
             this.price = price;
+        }
+
+        // 프로그램이 종료될 때
+        ~Product()
+        {
+            Console.WriteLine(this.name + "의 소멸자 호출");
         }
 
         public override string ToString()
@@ -154,6 +160,8 @@ namespace CSBasic5
             Console.WriteLine("두 번째 위치");
             Sample sample = new Sample();
             Console.WriteLine("세 번째 위치");
+
+            Console.WriteLine();
         }
     }
 }
