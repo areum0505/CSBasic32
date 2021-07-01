@@ -20,6 +20,14 @@ namespace CSBasic5
             {
                 return (input < 0 ? -input : input);
             }
+            public static double Abs(double input)
+            {
+                return (input < 0 ? -input : input);
+            }
+            public static long Abs(long input)
+            {
+                return (input < 0 ? -input : input);
+            }
         }
 
         class Test
@@ -80,6 +88,14 @@ namespace CSBasic5
             Program p = new Program();
             Console.WriteLine(p.instanceVariable);
             Console.WriteLine(p.instanceMethod());
+
+            Console.WriteLine();
+
+            // 오버로딩
+            Console.WriteLine(MyMath.Abs(52));
+            Console.WriteLine(MyMath.Abs(-273));
+            Console.WriteLine(MyMath.Abs(52.073));
+            Console.WriteLine(MyMath.Abs(299999999999));
         }
     }
 }
