@@ -8,7 +8,16 @@ namespace CSBasic6
 {
     class Program
     {
-       
+        abstract class AParent
+        {
+            public abstract void Method();
+        }
+        sealed class AChild : AParent
+        {
+            sealed public override void Method() { }
+        }
+        //class GChild : AChild { // public override void Method() { } }
+
         class Animal
         {
             public void Eat()
