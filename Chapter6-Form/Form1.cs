@@ -15,6 +15,7 @@ namespace Chapter6_Form
         public Form1()
         {
             InitializeComponent();
+            IsMdiContainer = true;
         }
 
         private void btnMessageBox1_Click(object sender, EventArgs e)
@@ -49,6 +50,7 @@ namespace Chapter6_Form
             Form form = new FormCustom();
             if(sender == btnModeless)
             {
+                form.MdiParent = this;
                 form.Show();
             } else if(sender == btnModal)
             {
