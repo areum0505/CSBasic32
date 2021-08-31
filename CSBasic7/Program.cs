@@ -42,6 +42,13 @@ namespace CSBasic7
     }
     class Program
     {
+        static void NextPosition(int x, int y, int vx, int vy, 
+            out int rx, out int ry)
+        {
+            rx = x + vx;
+            ry = y + vy;
+        }
+
         static void Main(string[] args)
         {
             // 제네릭
@@ -58,6 +65,22 @@ namespace CSBasic7
             Products ps = new Products();
             Random random = new Random();
             Console.WriteLine(ps[random.Next(0, 6)]);
-         }
+
+            Console.WriteLine();
+
+            // out 키워드
+            Console.Write("숫자 입력 : ");
+            int output = int.MinValue;
+            bool result = int.TryParse(Console.ReadLine(), out output);
+            if(result)
+                Console.WriteLine("변환 성공 : " + output);
+            else
+                Console.WriteLine("변환 실패 : " + output); // 0
+
+            int x = 0, y = 0, vx = 1, vy = 1;
+            Console.WriteLine("현재 좌표 : (" + x + ", " + y + ")");
+            NextPosition(x, y, vx, vy, out x, out y);
+            Console.WriteLine("다음 좌표 : (" + x + ", " + y + ")");
+        }
     }
 }
