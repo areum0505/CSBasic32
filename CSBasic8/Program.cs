@@ -8,6 +8,20 @@ namespace CSBasic8
 {
     class Program
     {
+        
+        class TestClass : IBasic
+        {
+            public int TestProperty 
+            { 
+                get => 0;
+                set => value = 0; 
+            }
+
+            public int TestInstanceMethod()
+            {
+                return 0;
+            }
+        }
         class Dummy : IDisposable
         {
             public void Dispose()
@@ -55,6 +69,11 @@ namespace CSBasic8
             {
                 Console.WriteLine("뭔가 했습니다.");
             }
+
+            Console.WriteLine();
+
+            IBasic basic = new TestClass();
+            basic.TestProperty = 3;
         }
     }
 }
