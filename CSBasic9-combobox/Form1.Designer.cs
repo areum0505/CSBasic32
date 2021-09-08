@@ -34,8 +34,12 @@ namespace CSBasic9_combobox
             this.foodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.foodBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -61,7 +65,7 @@ namespace CSBasic9_combobox
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(36, 73);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 172);
+            this.listBox1.Size = new System.Drawing.Size(120, 352);
             this.listBox1.TabIndex = 1;
             this.listBox1.ValueMember = "Price";
             // 
@@ -69,17 +73,51 @@ namespace CSBasic9_combobox
             // 
             this.foodBindingSource1.DataSource = typeof(CSBasic9_combobox.Food);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.foodBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(184, 29);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(604, 394);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "음료명";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "음료가격";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.foodBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,6 +128,9 @@ namespace CSBasic9_combobox
         private System.Windows.Forms.BindingSource foodBindingSource;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.BindingSource foodBindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }
 
