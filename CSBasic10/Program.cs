@@ -25,7 +25,11 @@ namespace CSBasic10
             };
             // 정렬
             //products.Sort(SortWithPrice); // 메서드이름
-            products.Sort(delegate (Product x, Product y)   // 무명 델리게이터
+            /*products.Sort(delegate (Product x, Product y)   // 무명 델리게이터
+            {
+                return x.Price.CompareTo(y.Price);
+            });*/
+            products.Sort((x, y) =>
             {
                 return x.Price.CompareTo(y.Price);
             });
