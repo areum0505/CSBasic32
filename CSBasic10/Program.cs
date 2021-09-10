@@ -29,10 +29,11 @@ namespace CSBasic10
             {
                 return x.Price.CompareTo(y.Price);
             });*/
-            products.Sort((x, y) =>
+            products.Sort((x, y) =>     // 람다
             {
                 return x.Price.CompareTo(y.Price);
             });
+            products.Sort((x, y) => x.Price.CompareTo(y.Price));
             // 출력
             foreach (var item in products)
             {
