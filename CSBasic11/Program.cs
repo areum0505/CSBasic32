@@ -25,6 +25,7 @@ namespace CSBasic11
                 Console.Write(item + " ");
             }
             Console.WriteLine();
+            // Linq
             output2 = (from item in input
                        where item % 2 == 0
                        orderby item descending
@@ -34,6 +35,24 @@ namespace CSBasic11
                 Console.Write(item + " ");
             }
             Console.WriteLine();
+
+            Console.WriteLine();
+
+            // 익명객체
+            var output3 = from item in input
+                          where item % 2 == 0
+                          select new
+                          {
+                              A = item * 2,
+                              B = item * item,
+                              C = 100
+                          };
+            foreach (var item in output3)
+            {
+                Console.WriteLine(item.A + " / " + item.B + " / " + item.C);
+            }
+
+
         }
     }
 }
