@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CSBasic11
 {
@@ -82,6 +83,28 @@ namespace CSBasic11
             foreach (var item in output4)
             {
                 Console.WriteLine(item);
+            }
+
+            Console.WriteLine();
+
+            // Linq 응용 예제
+            string url = "http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1150061500";
+            XElement xElement = XElement.Load(url);
+            var xmlQuery = from item in xElement.Descendants("data")
+                           select new
+                           {
+                               no = item.Attribute("seq").Value,
+                               hour = item.Element("hour").Value,
+                               day = item.Element("day").Value,
+                               temp = item.Element("temp").Value,
+                               wdkor = item.Element("wdKor").Value,
+                               wfkor = item.Element("wfKor").Value,
+                               tempMin = item.Element("tmn").Value,
+                               tempMax = item.Element("tmx").Value
+                           };
+            foreach (var item in xmlQuery)
+            {
+                Console.Write(item.no + "\t" + item.hour + "\t" + item.day + "\t" + item.temp + "\t" + item.wdkor + "\t" + item.wfkor + "\t" + item.tempMin + "\t" + item.tempMax + "\n");
             }
         }
     }
