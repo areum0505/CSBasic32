@@ -44,7 +44,6 @@ namespace BookManager
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.isbnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +52,7 @@ namespace BookManager
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isBorrowedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.borrowedAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -182,6 +182,8 @@ namespace BookManager
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -196,13 +198,10 @@ namespace BookManager
             this.dataGridView1.DataSource = this.bookBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(8, 20);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(761, 211);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataSource = typeof(BookManager.Book);
             // 
             // isbnDataGridViewTextBoxColumn
             // 
@@ -210,6 +209,7 @@ namespace BookManager
             this.isbnDataGridViewTextBoxColumn.DataPropertyName = "Isbn";
             this.isbnDataGridViewTextBoxColumn.HeaderText = "ISBN";
             this.isbnDataGridViewTextBoxColumn.Name = "isbnDataGridViewTextBoxColumn";
+            this.isbnDataGridViewTextBoxColumn.ReadOnly = true;
             this.isbnDataGridViewTextBoxColumn.Width = 58;
             // 
             // nameDataGridViewTextBoxColumn
@@ -218,6 +218,7 @@ namespace BookManager
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "책이름";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 66;
             // 
             // publisherDataGridViewTextBoxColumn
@@ -226,6 +227,7 @@ namespace BookManager
             this.publisherDataGridViewTextBoxColumn.DataPropertyName = "Publisher";
             this.publisherDataGridViewTextBoxColumn.HeaderText = "출판사";
             this.publisherDataGridViewTextBoxColumn.Name = "publisherDataGridViewTextBoxColumn";
+            this.publisherDataGridViewTextBoxColumn.ReadOnly = true;
             this.publisherDataGridViewTextBoxColumn.Width = 66;
             // 
             // pageDataGridViewTextBoxColumn
@@ -234,6 +236,7 @@ namespace BookManager
             this.pageDataGridViewTextBoxColumn.DataPropertyName = "Page";
             this.pageDataGridViewTextBoxColumn.HeaderText = "쪽수";
             this.pageDataGridViewTextBoxColumn.Name = "pageDataGridViewTextBoxColumn";
+            this.pageDataGridViewTextBoxColumn.ReadOnly = true;
             this.pageDataGridViewTextBoxColumn.Width = 54;
             // 
             // userIdDataGridViewTextBoxColumn
@@ -242,6 +245,7 @@ namespace BookManager
             this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
             this.userIdDataGridViewTextBoxColumn.HeaderText = "사용자ID";
             this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+            this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.userIdDataGridViewTextBoxColumn.Width = 77;
             // 
             // userNameDataGridViewTextBoxColumn
@@ -250,6 +254,7 @@ namespace BookManager
             this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
             this.userNameDataGridViewTextBoxColumn.HeaderText = "사용자명";
             this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            this.userNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.userNameDataGridViewTextBoxColumn.Width = 78;
             // 
             // isBorrowedDataGridViewCheckBoxColumn
@@ -258,6 +263,7 @@ namespace BookManager
             this.isBorrowedDataGridViewCheckBoxColumn.DataPropertyName = "isBorrowed";
             this.isBorrowedDataGridViewCheckBoxColumn.HeaderText = "대출여부";
             this.isBorrowedDataGridViewCheckBoxColumn.Name = "isBorrowedDataGridViewCheckBoxColumn";
+            this.isBorrowedDataGridViewCheckBoxColumn.ReadOnly = true;
             this.isBorrowedDataGridViewCheckBoxColumn.Width = 59;
             // 
             // borrowedAtDataGridViewTextBoxColumn
@@ -266,7 +272,12 @@ namespace BookManager
             this.borrowedAtDataGridViewTextBoxColumn.DataPropertyName = "BorrowedAt";
             this.borrowedAtDataGridViewTextBoxColumn.HeaderText = "대출시각";
             this.borrowedAtDataGridViewTextBoxColumn.Name = "borrowedAtDataGridViewTextBoxColumn";
+            this.borrowedAtDataGridViewTextBoxColumn.ReadOnly = true;
             this.borrowedAtDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // bookBindingSource
+            // 
+            this.bookBindingSource.DataSource = typeof(BookManager.Book);
             // 
             // FormBook
             // 
