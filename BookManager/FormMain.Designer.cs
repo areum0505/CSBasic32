@@ -95,12 +95,14 @@ namespace BookManager
             this.도서관리ToolStripMenuItem.Name = "도서관리ToolStripMenuItem";
             this.도서관리ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.도서관리ToolStripMenuItem.Text = "도서 관리";
+            this.도서관리ToolStripMenuItem.Click += new System.EventHandler(this.도서관리ToolStripMenuItem_Click);
             // 
             // 사용자관리ToolStripMenuItem
             // 
             this.사용자관리ToolStripMenuItem.Name = "사용자관리ToolStripMenuItem";
             this.사용자관리ToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.사용자관리ToolStripMenuItem.Text = "사용자 관리";
+            this.사용자관리ToolStripMenuItem.Click += new System.EventHandler(this.사용자관리ToolStripMenuItem_Click);
             // 
             // groupBox1
             // 

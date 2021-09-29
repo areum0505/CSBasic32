@@ -151,6 +151,7 @@ namespace BookManager
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "추가";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnModify
             // 
@@ -160,6 +161,7 @@ namespace BookManager
             this.btnModify.TabIndex = 9;
             this.btnModify.Text = "수정";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnDelete
             // 
@@ -169,6 +171,7 @@ namespace BookManager
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // groupBox2
             // 
@@ -202,6 +205,7 @@ namespace BookManager
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(761, 211);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CurrentCellChanged += new System.EventHandler(this.dataGridView1_CurrentCellChanged);
             // 
             // isbnDataGridViewTextBoxColumn
             // 
